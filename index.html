@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEPHORA | Beauty Starts Here</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/Sephora-Company-Logo-.jpg" type="image/x-icon">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="nav-left">
+            <img src="images/Sephora-Company-Logo-.jpg" alt="logo">
+        </div>
+        <div class="nav-right" onclick="navigateToCart()">
+            <p>🛒 <span id="cartCount">0</span></p>
+        </div>
+    </div>
+
+    <!--Hero Section-->
+
+    <div class="hero">
+        <div class="hero-left">
+            <h1>Beauty Begins Here</h1>
+            <p>Loved by 10,000+ beauty Enthusiasts</p>
+           <a href="#filter"> <button class="explore">Explore Now</button>  </a>
+        </div>
+        <div class="hero-right">
+            <img src="images/image6.jpg" alt="hero">
+        </div>
+    </div>
+
+    <hr class="line">
+
+    <!--Marquee-->
+
+    <h2 class="trusted">Trusted By</h2>
+
+    <div class="marquee">
+        <marquee>
+            <img src="images/avon.png">
+            <img src="images/wella.png">
+            <img src="images/pg.png">
+            <img src="images/tresemme.png">
+            <img src="images/loreal.png">
+        </marquee>
+    </div>
+
+    <!--Video-->
+    <div class="video" style="background-color: antiquewhite;">
+        <video src="images/video.mp4" autoplay loop muted></video>
+    </div>
+
+    <hr class="line">
+
+    <!--Images Section-->
+    <div class="images">
+        <img src="images/image1.jpg">
+        <img src="images/image2.jpg">
+        <img src="images/image3.jpg">
+        <img src="images/image4.jpg">
+        <img src="images/image5.jpg">
+        <img src="images/image6.jpg">
+    </div>
+
+    
+    <!--Video-->
+    <div class="video " style="background-color: rgb(242, 183, 193);">
+        <video src="images/SKIN ELEGANCE PRODUCT VIDEO COMMERCIAL _ SKINCARE PRODUCTS.mp4" autoplay loop muted></video>
+    </div>
+
+    <hr class="line">
+
+
+    <!-- Modal HTML -->
+<div class="overlay" id="maintenanceModal">
+    <div class="modal">
+        <button class="close-btn" onclick="closeModal()">X</button>
+        <h2>Website Under Maintenance</h2>
+        <p>We are currently working on the Website. More Products will be published soon!</p>
+    </div>
+</div>
+
+<!-- Search Filter -->
+<div class="search-filter">
+    <input type="text" id="search" placeholder="Search products..." oninput="filterProducts()">
+</div>
+
+<!-- Filter Options Section -->
+ <div class="container">
+<div class="filter-section" id="filter">
+    <div class="filter-options">
+        <div class="filter">
+            <label for="priceRange">Price Range</label>
+            <input type="range" id="priceRange" min="0" max="500" step="10" onchange="filterProducts()">
+        </div>
+        <div class="filter">
+            <label for="categories">Categories</label>
+            <select id="categories" onchange="filterProducts()">
+                <option value="">All</option>
+                <option value="Primer">Primer</option>
+                <option value="Face Wash">Face Wash</option>
+                <option value="Kajal">Kajal</option>
+                <option value="Dedorant">Dedorant</option>
+                <option value="Face Cream">Face Cream</option>
+                <option value="Serum">Serum</option>
+                <option value="Shampoo">Shampoo</option>
+            </select>
+        </div>
+        <div class="filter">
+            <label for="companies">Company</label>
+            <select id="companies" onchange="filterProducts()">
+                <option value="">All</option>
+                <option value="LAKME">LAKME</option>
+                <option value="SWISS">SWISS</option>
+                <option value="MAYBELLINE">MAYBELLINE</option>
+                <option value="NIVEA">NIVEA</option>
+                <option value="LOREAL">LOREAL</option>
+                <option value="TRESEMME">TRESEMME</option>
+                <option value="PONDS">PONDS</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+ </div>
+
+
+<!-- Product Grid -->
+<div class="product-grid" id="productGrid">
+    <!-- Product cards will be generated here -->
+</div>
+
+
+<!-- Footer HTML -->
+<footer class="footer">
+    <div class="footer-content">
+        <!-- Footer Logo and Description -->
+        <div class="footer-logo">
+            <img src="images/Sephora-Company-Logo-.jpg">
+        </div>
+        <p>Building the future, Increase Your beauty. Join us on our journey.</p>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            © 2024 Beauty. All rights reserved.
+        </div>
+    </div>
+</footer>
+    
+</body>
+
+<script>
+    // Show modal on page load
+    window.onload = function() {
+        const modal = document.getElementById("maintenanceModal");
+        modal.classList.add("show");
+
+        // Animate modal appearance
+        const popup = modal.querySelector('.modal');
+        setTimeout(() => popup.classList.add('show'), 100);
+    };
+
+    // Close modal function
+    function closeModal() {
+        const modal = document.getElementById("maintenanceModal");
+        const popup = modal.querySelector('.modal');
+        popup.classList.remove('show');
+
+        setTimeout(() => modal.classList.remove('show'), 300);
+    }
+</script>
+
+<script src="script.js"></script>
+
+</html>
+
+
+
